@@ -1,116 +1,148 @@
+/* --- DARK MEDIEVAL VARIABLES --- */
 :root {
-    --bg-color: #050505;
-    --neon-pink: #ff0055;
-    --neon-blue: #00f2ff;
-    --text-color: #e0e0e0;
-    --card-bg: #111;
+    --bg-color: #0a0a0c;      /* Deep obsidian */
+    --gold: #c5a059;          /* Antique gold for Divinity */
+    --blood-red: #8b0000;     /* Crimson for Demons */
+    --text-color: #d1d1d1;
+    --card-bg: #151518;
 }
+
+/* --- BASE STYLES --- */
+* { box-sizing: border-box; }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'EB Garamond', serif;
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.8;
     overflow-x: hidden;
 }
 
 h1, h2, h3, .logo {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Cinzel', serif; /* Classic Roman/Medieval look */
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
-/* Navbar */
+/* --- NAVIGATION --- */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    border-bottom: 2px solid var(--neon-blue);
-    background: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(10, 10, 12, 0.95);
+    border-bottom: 1px solid var(--gold);
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 1.4rem;
+    text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    padding: 0;
 }
 
 .nav-links a {
-    color: var(--neon-blue);
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--neon-pink);
-    text-shadow: 0 0 10px var(--neon-pink);
+    color: var(--gold);
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .hero {
-    height: 60vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080'); /* Add a cool Minetest screenshot here */
+    padding: 20px;
+    /* Use a dark cathedral or mountain screenshot here */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://via.placeholder.com/1200x800');
     background-size: cover;
-    border-bottom: 5px solid var(--neon-pink);
+    background-position: center;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    color: var(--neon-blue);
-    text-shadow: 3px 3px var(--neon-pink);
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 20px var(--blood-red);
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background: transparent;
-    color: var(--neon-pink);
-    border: 2px solid var(--neon-pink);
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.4s;
+/* --- LORE SECTION --- */
+.container { padding: 60px 20px; text-align: center; max-width: 800px; margin: auto; }
+
+.lore-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #aaa;
 }
 
-.btn:hover {
-    background: var(--neon-pink);
-    color: white;
-    box-shadow: 0 0 20px var(--neon-pink);
-}
-
-/* Grid & Cards */
-.container { padding: 50px; text-align: center; }
-
+/* --- GRID & CARDS --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 50px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px;
 }
 
 .card {
     background: var(--card-bg);
-    padding: 20px;
-    border-left: 5px solid var(--neon-blue);
-    transition: transform 0.3s;
+    padding: 30px;
+    border: 1px solid #222;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    transition: 0.4s;
 }
 
+.card h3 { color: var(--gold); }
+
 .card:hover {
-    transform: translateY(-10px);
-    border-left: 5px solid var(--neon-pink);
+    border-color: var(--blood-red);
+    transform: translateY(-5px);
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    font-family: 'MedievalSharp', cursive;
+    margin-top: 30px;
+    transition: 0.5s;
+    background: rgba(197, 160, 89, 0.05);
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: #000;
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.4);
+}
+
+/* --- RESPONSIVE DESKTOP --- */
+@media (min-width: 768px) {
+    .navbar { flex-direction: row; justify-content: space-between; padding: 25px 80px; }
+    .hero h1 { font-size: 5rem; }
+    .grid-container { grid-template-columns: repeat(3, 1fr); padding: 60px 80px; }
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    font-size: 0.8rem;
-    color: #555;
-    border-top: 1px solid #222;
-  }
+    padding: 40px;
+    border-top: 1px solid #1a1a1a;
+    font-size: 0.7rem;
+    color: #444;
+}
