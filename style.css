@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #050505;
+    --neon-pink: #ff0055;
+    --neon-blue: #00f2ff;
+    --text-color: #e0e0e0;
+    --card-bg: #111;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    border-bottom: 2px solid var(--neon-blue);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080'); /* Add a cool Minetest screenshot here */
+    background-size: cover;
+    border-bottom: 5px solid var(--neon-pink);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    color: var(--neon-blue);
+    text-shadow: 3px 3px var(--neon-pink);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    color: var(--neon-pink);
+    border: 2px solid var(--neon-pink);
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background: var(--neon-pink);
+    color: white;
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+/* Grid & Cards */
+.container { padding: 50px; text-align: center; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-left: 5px solid var(--neon-blue);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-left: 5px solid var(--neon-pink);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #222;
+  }
